@@ -1,18 +1,21 @@
 {
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "fs": "^0.0.1-security",
-    "inquirer": "^9.1.4"
+    "inquirer": "^9.1.4",
+    "jest": "^29.5.0"
   },
   "name": "team-profile-generator",
   "description": "## Your Task",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "directories": {
-    "lib": "lib"
+    "lib": "lib",
+    "test": "test"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose test/*"
   },
   "keywords": [],
   "author": "",
