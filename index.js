@@ -77,5 +77,39 @@ function init() {
     }
 
 
+    function addEngineer() {
+        inquirer.prompt([
 
-    init();
+            {
+                type: "input",
+                name: "engineerName",
+                message: "What is the engineer's name?"
+            },
+
+            {
+                type: "input",
+                name: "engineerId",
+                message: "What is the engineer's employee ID number?"
+            },
+
+            {
+                type: "input",
+                name: "engineerEmail",
+                message: "What is the engineer's email address?"
+            },
+
+            {
+                type: "input",
+                name: "engineerGithub",
+                message: "What is the engineer's GitHub username?"
+            }
+
+        ]).then(answers => {
+            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+            arrayTeam.push(engineer);
+            teamBuild();
+        });
+
+
+
+        init();
