@@ -20,11 +20,11 @@ function init() {
     function teamBuild() {
         inquirer.prompt([{
             type: "list",
-            message: "What type of employee would you like to add to your team?",
-            name: "addEmployeePrompt",
-            choices: ["Manager", "Engineer", "Intern", "No more team members are needed."]
+            message: "Who would you like to add to the team?",
+            name: "employeeChoice",
+            choices: ["Manager", "Engineer", "Intern", "No more employees required"]
         }]).then(function (userInput) {
-            switch (userInput.addEmployeePrompt) {
+            switch (userInput.employeeChoice) {
                 case "Manager":
                     addManager();
                     break;
@@ -145,5 +145,18 @@ function init() {
             teamBuild();
         });
 
+    }
 
-        init();
+
+    function buildHTML() {
+        console.log("Success! The team has been generated!")
+
+        fs.writeFileSync(outputPath, generateTeam(arrayTeam), "UTF-8")
+
+    }
+
+    teamBuild();
+
+}
+
+init();
