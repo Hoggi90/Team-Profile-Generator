@@ -15,7 +15,7 @@ let arrayTeam = [];
 
 
 
-function App() {
+function init() {
 
     function teamBuild() {
         inquirer.prompt([{
@@ -40,3 +40,6 @@ function App() {
             }
         })
     }
+
+
+    init();
