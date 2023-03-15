@@ -47,29 +47,29 @@ function init() {
             {
                 type: "input",
                 name: "managerName",
-                message: "What is the manager's name?"
+                message: "What's the manager's name?"
             },
 
             {
                 type: "input",
                 name: "managerId",
-                message: "What is the manager's employee ID number?"
+                message: "What's the manager's ID number?"
             },
 
             {
                 type: "input",
                 name: "managerEmail",
-                message: "What is the manager's email address?"
+                message: "What's the manager's email address?"
             },
 
             {
                 type: "input",
-                name: "managerOfficeNumber",
-                message: "What is the manager's office number?"
+                name: "managerNumber",
+                message: "What's the manager's office number?"
             }
 
         ]).then(answers => {
-            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
+            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerNumber);
             arrayTeam.push(manager);
             teamBuild();
         });
@@ -83,25 +83,25 @@ function init() {
             {
                 type: "input",
                 name: "engineerName",
-                message: "What is the engineer's name?"
+                message: "What's the engineer's name?"
             },
 
             {
                 type: "input",
                 name: "engineerId",
-                message: "What is the engineer's employee ID number?"
+                message: "What's the engineer's ID number?"
             },
 
             {
                 type: "input",
                 name: "engineerEmail",
-                message: "What is the engineer's email address?"
+                message: "What's the engineer's email address?"
             },
 
             {
                 type: "input",
                 name: "engineerGithub",
-                message: "What is the engineer's GitHub username?"
+                message: "What's the engineer's GitHub username?"
             }
 
         ]).then(answers => {
@@ -110,6 +110,40 @@ function init() {
             teamBuild();
         });
 
+    }
+
+    function addIntern() {
+        inquirer.prompt([
+
+            {
+                type: "input",
+                name: "internName",
+                message: "What's the intern's name?"
+            },
+
+            {
+                type: "input",
+                name: "internId",
+                message: "What's the intern's ID number?"
+            },
+
+            {
+                type: "input",
+                name: "internEmail",
+                message: "What's the intern's email address?"
+            },
+
+            {
+                type: "input",
+                name: "internSchool",
+                message: "What's the school the intern goes to?"
+            }
+
+        ]).then(answers => {
+            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+            arrayTeam.push(intern);
+            teamBuild();
+        });
 
 
         init();
