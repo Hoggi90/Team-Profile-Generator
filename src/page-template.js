@@ -106,8 +106,7 @@ export default team => {
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="team-area col-12 d-flex justify-content-center">
+        <div class="row justify-content-center col-12">
                 ${generateTeam(team)}
             </div>
         </div>
