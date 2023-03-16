@@ -1,3 +1,4 @@
+// importing all the required files and dependencies
 import Manager from "./lib/Manager.js";
 import Engineer from "./lib/Engineer.js";
 import Intern from "./lib/Intern.js";
@@ -9,14 +10,13 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 import generateTeam from "./src/page-template.js";
 
 
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
-
+// Empty array to push the team objects to
 let arrayTeam = [];
 
 
-
+// function to initialise the start of the application
 function init() {
-
+    // function to start building the team, a series of inquirer prompt questions with a switch case
     function teamBuild() {
         inquirer.prompt([{
             type: "list",
@@ -40,7 +40,7 @@ function init() {
             }
         })
     }
-
+    // function to a add a manager, which includes a series of inquirer prompts
     function addManager() {
         inquirer.prompt([
 
@@ -67,7 +67,7 @@ function init() {
                 name: "managerNumber",
                 message: "What's the manager's office number?"
             }
-
+            // callback function to push the answers into the empty array 'arrayTeam'
         ]).then(answers => {
             const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerNumber);
             arrayTeam.push(manager);
@@ -76,7 +76,7 @@ function init() {
 
     }
 
-
+    // function to a add an engineer, which includes a series of inquirer prompts
     function addEngineer() {
         inquirer.prompt([
 
@@ -103,7 +103,7 @@ function init() {
                 name: "engineerGithub",
                 message: "What's the engineer's GitHub username?"
             }
-
+            // callback function to push the answers into the empty array 'arrayTeam'
         ]).then(answers => {
             const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
             arrayTeam.push(engineer);
@@ -112,6 +112,7 @@ function init() {
 
     }
 
+    // function to a add an intern, which includes a series of inquirer prompts
     function addIntern() {
         inquirer.prompt([
 
@@ -138,7 +139,7 @@ function init() {
                 name: "internSchool",
                 message: "What's the school the intern goes to?"
             }
-
+            // callback function to push the answers into the empty array 'arrayTeam'
         ]).then(answers => {
             const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
             arrayTeam.push(intern);
@@ -147,16 +148,16 @@ function init() {
 
     }
 
-
+    // a function to build the HTML page which console logs validation that the HTML was created. includes a fs method to write to the file
     function buildHTML() {
         console.log("Success! The team has been generated!")
 
         fs.writeFileSync(outputPath, generateTeam(arrayTeam), "UTF-8")
 
     }
-
+    // calls the teamBuild function
     teamBuild();
 
 }
-
+// calls the initialise function
 init();
