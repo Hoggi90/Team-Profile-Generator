@@ -7,7 +7,7 @@
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Screenshots] (#screenshots)
+  - [Screenshots](#screenshots)
   - [Contribution](#contribution)
   - [Testing](#testing)
   - [Questions](#questions)
@@ -20,14 +20,15 @@
 
   ## Usage:
   Type the command 'node index.js' to run the application, then answer the prompted questions by adding employees one by one. Once the desired team number is reached choose 'no more employees required' and this will then generate and render a HTML page with the team profiles.
-  
-  ## Screenshots:
+
+  ## Screenshots:
 
   ![Screenshot](/assets/screenshot1.png)
   ![Screenshot](/assets/screenshot2.png)
 
   ## License:
-  
+  This is the licence used for the project. [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://shields.io)
+
 
   ## Contribution:
   You currently can not contribute to the project. But this may be an option in the future
