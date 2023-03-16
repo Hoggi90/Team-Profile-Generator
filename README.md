@@ -26,6 +26,8 @@
   ![Screenshot](/assets/screenshot1.png)
   ![Screenshot](/assets/screenshot2.png)
 
+  You can also view a video walkthrough via the following link: https://youtu.be/wE7ELFSHN00
+
   ## License:
   This is the licence used for the project. [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://shields.io)
 
