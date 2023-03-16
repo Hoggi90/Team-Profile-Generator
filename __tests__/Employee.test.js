@@ -1,8 +1,8 @@
-const Employee = require("../lib/Employee");
+import Employee from "../lib/Employee.js";
 
 test("Can instantiate Employee instance", () => {
   const e = new Employee();
-  expect(typeof(e)).toBe("object");
+  expect(typeof (e)).toBe("object");
 });
 
 test("Can set name via constructor arguments", () => {
